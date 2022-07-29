@@ -1,14 +1,13 @@
-<script>
+<script lang="ts">
 	import { getContext } from 'svelte';
-	export let message;
+	export let message: string;
 	export let hasForm = false;
-	export let onCancel = () => {};
-	export let onOkay = () => {};
+	export let onCancel: () => void;
+	export let onOkay: (arg: string) => void;
 
-	const { close } = getContext('simple-modal');
+	const { close } = getContext('simple-modal-slots');
 
-	let value;
-	let onChange = () => {};
+	let value: string;
 
 	function _onCancel() {
 		onCancel();
@@ -19,14 +18,12 @@
 		onOkay(value);
 		close();
 	}
-
-	$: onChange(value);
 </script>
 
 <h2>{message}</h2>
 
 {#if hasForm}
-	<input type="text" bind:value on:keydown={(e) => e.which === 13 && _onOkay()} />
+	<input type="text" bind:value on:keypress={(e) => e.key === 'Enter' && _onOkay()} />
 {/if}
 
 <div class="buttons">

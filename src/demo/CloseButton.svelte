@@ -1,6 +1,14 @@
-<script>
-	// This property is used by Modal.svelte to pass down the close function
-	export let onClose;
+<script lang="ts">
+	import { getContext } from 'svelte';
+
+	export let showModal: boolean;
+
+	const { close } = getContext('simple-modal-slots');
+
+	const onClose = () => {
+		close();
+		showModal = false;
+	};
 </script>
 
 <button on:click={onClose}>Custom Close Button</button>

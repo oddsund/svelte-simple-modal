@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { type BlurParams, fade, type TransitionConfig } from 'svelte/transition';
 	import { createEventDispatcher, setContext, onDestroy, onMount } from 'svelte';
-	import type * as CSS from 'csstype';
 
 	type State = {
 		ariaLabel: string | null;
@@ -9,11 +8,11 @@
 		closeButton: boolean;
 		closeOnEsc: boolean;
 		closeOnOuterClick: boolean;
-		styleBg: CSS.Properties;
-		styleWindowWrap: CSS.Properties;
-		styleWindow: CSS.Properties;
-		styleContent: CSS.Properties;
-		styleCloseButton: CSS.Properties;
+		styleBg: Record<string, string | number>;
+		styleWindowWrap: Record<string, string | number>;
+		styleWindow: Record<string, string | number>;
+		styleContent: Record<string, string | number>;
+		styleCloseButton: Record<string, string | number>;
 		classBg: string | undefined;
 		classWindowWrap: string | undefined;
 		classWindow: string | undefined;

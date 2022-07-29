@@ -1,8 +1,8 @@
-<script>
-	export let message;
+<script lang="ts">
+	export let message: string;
 </script>
 
-<h1>{message}</h1>
+<h1>🎉 {message} 🍾</h1>
 
 <h2>What is Lorem Ipsum?</h2>
 <p>

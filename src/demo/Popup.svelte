@@ -2,7 +2,7 @@
 	export let message = 'Default message';
 </script>
 
-<h2>{message}</h2>
+<h2>🎉 {message} 🍾</h2>
 
 <style>
 	h2 {

@@ -1,58 +1,64 @@
 {
-  "name": "svelte-simple-modal",
-  "version": "1.4.1",
-  "description": "A small and simple modal for Svelte",
-  "type": "module",
-  "svelte": "src/index.js",
-  "main": "lib/index.js",
-  "module": "lib/index.js",
-  "types": "types/index.d.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "build": "rm -rf lib && rm -rf types && rollup -c && sed -i '/from \"\"/d' types/index.d.ts",
-    "precommit": "NODE_ENV=production lint-staged; npm run lint",
-    "prepare": "npm run lint && npm run build",
-    "prerelease": "npm run lint; rm -f dist.zip; npm run build; zip dist.zip lib/* src/* types/*",
-    "lint": "eslint src/* rollup.config.js"
-  },
-  "files": [
-    "lib",
-    "src",
-    "types"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/flekschas/svelte-simple-modal.git"
-  },
-  "keywords": [
-    "svelte",
-    "modal",
-    "popup",
-    "dialog"
-  ],
-  "author": "Fritz Lekschas",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/flekschas/svelte-simple-modal/issues"
-  },
-  "homepage": "https://github.com/flekschas/svelte-simple-modal#readme",
-  "peerDependencies": {
-    "svelte": "^3.31.2"
-  },
-  "devDependencies": {
-    "@tsconfig/svelte": "^2.0.1",
-    "eslint": "^7.32.0",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-svelte3": "^3.2.0",
-    "husky": "^4.3.8",
-    "lint-staged": "^10.5.4",
-    "prettier": "^2.3.2",
-    "prettier-plugin-svelte": "^2.4.0",
-    "pretty-quick": "^3.1.1",
-    "rollup": "^2.56.3",
-    "rollup-plugin-svelte": "^7.1.0",
-    "sveld": "^0.15.1",
-    "svelte": "^3.31.2",
-    "typescript": "^4.4.4"
-  }
+	"name": "svelte-simple-modal-slots",
+	"version": "0.0.1",
+	"description": "A small and simple modal for Svelte, using slots",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"package": "svelte-kit package",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync",
+		"test": "playwright test",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
+		"format": "prettier --write --plugin-search-dir=. .",
+		"precommit": "npm run lint"
+	},
+	"peerDependencies": {
+		"svelte": "^3.31.2"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.22.2",
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/kit": "next",
+		"@tsconfig/svelte": "^2.0.1",
+		"@typescript-eslint/eslint-plugin": "^5.27.0",
+		"@typescript-eslint/parser": "^5.27.0",
+		"eslint": "^8.16.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"husky": "^4.3.8",
+		"prettier": "^2.6.2",
+		"prettier-plugin-svelte": "^2.7.0",
+		"sveld": "^0.15.1",
+		"svelte": "^3.31.2",
+		"svelte-check": "^2.7.1",
+		"svelte-preprocess": "^4.10.6",
+		"svelte2tsx": "^0.5.13",
+		"tslib": "^2.3.1",
+		"typescript": "^4.7.4",
+		"vite": "^3.0.0"
+	},
+	"type": "module",
+	"author": "Thomas Oddsund, Fritz Lekschas",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/oddsund/svelte-simple-modal-slots/issues"
+	},
+	"homepage": "https://github.com/oddsund/svelte-simple-modal-slots#readme",
+	"keywords": [
+		"svelte",
+		"modal",
+		"popup",
+		"dialog"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/oddsund/svelte-simple-modal-slots.git"
+	},
+	"svelte": "src/index.js",
+	"main": "lib/index.js",
+	"module": "lib/index.js",
+	"types": "types/index.d.ts"
 }

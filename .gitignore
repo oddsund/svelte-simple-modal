@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
-index.js
-!src/index.js
-module.js
-dist.zip
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
